@@ -2,6 +2,7 @@ import requests
 import data_fetch_functions
 import pfr_link_list
 import stat_enum
+import data_analysis_functions
 from bs4 import BeautifulSoup
 import tkinter as tk
 from tkinter import ttk 

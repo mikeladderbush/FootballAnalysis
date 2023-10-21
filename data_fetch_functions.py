@@ -1,6 +1,9 @@
 import requests
 import json
+import data_analysis_functions
 from bs4 import BeautifulSoup
+
+x = []
 
 def fetch_total_yards(selected_alias, selected_url):
     if selected_url:
@@ -26,8 +29,12 @@ def fetch_yards_per_game_with_opponent(selected_alias, selected_url):
                 for opponent, yard in zip(opponents, yards):
                     print(opponent.get_text())
                     print(yard.get_text())
+                    x.append(yard.get_text())
             else:
                 print('Data not found.')
+            
+            data_analysis_functions.create_graph(x)
+            
         else:
             print('Failed to retrieve the web page.')
             
