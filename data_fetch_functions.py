@@ -29,7 +29,10 @@ def fetch_yards_per_game_with_opponent(selected_alias, selected_url):
                 for opponent, yard in zip(opponents, yards):
                     print(opponent.get_text())
                     print(yard.get_text())
-                    x.append(yard.get_text())
+                    if yard.get_text():
+                        x.append(int(yard.get_text()))
+                    else:
+                        x.append(int(0))
             else:
                 print('Data not found.')
             
