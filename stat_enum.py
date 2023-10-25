@@ -1,8 +1,4 @@
 stat_list = {
-    "opponent": "opp",
-    "outcome": "game_outcome",
-    "record": "team_record",
-    "location": "game_location",
     "points": "pts_off",
     "rush yards": "rush_yds_off",
     "pass yards": "pass_yds_off",

@@ -1,6 +1,4 @@
-#2. Create analysis tools to compare specific stats
-    #-determine impact of QB, CB, and WR stats on game outcome
-    #-compare final score, final yards, time of possession, look for correlation between stats
-    #-determine grade of CB by who they guarded (what the wr career stats were), what QB they faced, depth of target, how they covered other wrs
-#3. Create plot reports to pull in  data after analysis
-#4. New note, add the ability for the user to select stats and analyze them with graphs
+1. Increase number of stats to be displayed per figure
+2. add ability to include multiple figures
+3. add opponent name, team record, and home/away for x-axis
+4. make the spread and whether they cover a recorded stat
