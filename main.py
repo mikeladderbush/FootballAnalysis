@@ -20,9 +20,16 @@ selected_alias_var = tk.StringVar()
 selected_stat_var = tk.StringVar()
 selected_week_var = tk.StringVar()
 
+stat_vector = []
+
 def on_combobox_select(event):
     selected_alias_var.set(url_combobox.get())
-
+    
+def add_stat_to_box():
+    selected_stat_var = stat_combobox.get()
+    stat_box.insert(tk.END, selected_stat_var)
+    stat_vector.append(selected_stat_var)
+    
 url_combobox = ttk.Combobox(app, values=list(pfr_link_list.url_aliases.keys()), width=50, textvariable=selected_alias_var)
 url_combobox.set(list(pfr_link_list.url_aliases.keys())[0]) 
 url_combobox.pack(pady=10)
@@ -31,16 +38,16 @@ stat_combobox = ttk.Combobox(app, values=list(stat_enum.stat_list.keys()), width
 stat_combobox.set(list(stat_enum.stat_list.keys())[0]) 
 stat_combobox.pack(pady=10)
 
-spread_combobox = ttk.Combobox(app, values=list(spread_list.weeks.keys()), width=50, textvariable=selected_week_var)
-spread_combobox.set(list(spread_list.weeks.keys())[0])
-spread_combobox.pack(pady=10)
+add_chosen_stat = tk.Button(app,text="Add Stat", command=add_stat_to_box)
+add_chosen_stat.pack()
 
-url_combobox.bind("<<ComboboxSelected>>", on_combobox_select)
-
-fetch_chosen_stat = tk.Button(app, text="Fetch Chosen Stat", command=lambda: data_fetch_functions.fetch_chosen_stat(pfr_link_list.url_aliases.get(selected_alias_var.get()), stat_enum.stat_list.get(selected_stat_var.get())) )
-fetch_chosen_stat.pack()
+fetch_chosen_stats = tk.Button(app, text="Analyze Chosen Stats", command=lambda: data_fetch_functions.fetch_chosen_stats(pfr_link_list.url_aliases.get(selected_alias_var.get()), stat_vector))
+fetch_chosen_stats.pack()
 
 fetch_spreads = tk.Button(app, text="Fetch Spreads", command=lambda: data_fetch_functions.fetch_spread_and_result(spread_list_get(selected_alias_var.get())))
 fetch_spreads.pack()
+
+stat_box = tk.Listbox(app)
+stat_box.pack()
 
 app.mainloop()
