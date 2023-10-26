@@ -28,7 +28,7 @@ def on_combobox_select(event):
 def add_stat_to_box():
     selected_stat_var = stat_combobox.get()
     stat_box.insert(tk.END, selected_stat_var)
-    stat_vector.append(selected_stat_var)
+    stat_vector.append(stat_enum.stat_list[selected_stat_var])
     
 url_combobox = ttk.Combobox(app, values=list(pfr_link_list.url_aliases.keys()), width=50, textvariable=selected_alias_var)
 url_combobox.set(list(pfr_link_list.url_aliases.keys())[0]) 

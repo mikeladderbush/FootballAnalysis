@@ -9,7 +9,6 @@ def fetch_chosen_stats(selected_url, stat_vector):
         response = requests.get(selected_url)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
-            print(stat_vector)
             for item in stat_vector:
                 chosen_stat = soup.find_all(attrs={'class': 'right', 'data-stat': item})
                 if chosen_stat:
@@ -20,7 +19,7 @@ def fetch_chosen_stats(selected_url, stat_vector):
                             x.append(int(0))
                 else:
                     print('Data not found.\n')
-                #data_analysis_functions.create_graph(x)
+                data_analysis_functions.create_graph(x)
         else:
             print('Failed to retrive the web page.')
             
