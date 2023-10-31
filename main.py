@@ -29,6 +29,11 @@ def add_stat_to_box():
     stat_box.insert(tk.END, selected_stat_var)
     stat_vector.append(stat_enum.stat_list[selected_stat_var])
     print(stat_vector)
+
+def clear_stat_box():
+    stat_box.delete(0, 'end')
+    stat_vector.clear()
+
     
 url_combobox = ttk.Combobox(app, values=list(pfr_link_list.url_aliases.keys()), width=50, textvariable=selected_alias_var)
 url_combobox.set(list(pfr_link_list.url_aliases.keys())[0]) 
@@ -40,6 +45,9 @@ stat_combobox.pack(pady=10)
 
 add_chosen_stat = tk.Button(app,text="Add Stat", command=add_stat_to_box)
 add_chosen_stat.pack()
+
+remove_stats = tk.Button(app, text="Remove Stats", command=clear_stat_box) 
+remove_stats.pack()
 
 fetch_chosen_stats = tk.Button(app, text="Analyze Chosen Stats", command=lambda: data_fetch_functions.fetch_chosen_stats(pfr_link_list.url_aliases.get(selected_alias_var.get()), stat_vector))
 fetch_chosen_stats.pack()

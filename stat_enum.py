@@ -7,7 +7,4 @@ stat_list = {
     "yards defended": "yards_def",
     "pass yards defended": "pass_yds_def",
     "rush yards defended": "rush_yds_def",
-    "expected points": "exp_pts_off",
-    "expected defensive points": "exp_pts_def",
-    "expected special teams points": "exp_pts_st",
 }

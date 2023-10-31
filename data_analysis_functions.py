@@ -10,6 +10,7 @@ def create_graph(*args):
     ax = plt.axes()
     ax.set_xticks(week)
     ax.set_xticklabels(opponent_array)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
     
     for vector in args:
         input_vector.append(vector)
@@ -18,4 +19,5 @@ def create_graph(*args):
     for item in input_numpy_arrays:
         for stat in item:
             plt.plot(week,stat)
+    plt.tight_layout()
     plt.show()
