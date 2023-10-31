@@ -2,7 +2,6 @@ import requests
 import data_fetch_functions
 import pfr_link_list
 import stat_enum
-import spread_list
 import data_analysis_functions
 from bs4 import BeautifulSoup
 import tkinter as tk
@@ -44,9 +43,6 @@ add_chosen_stat.pack()
 
 fetch_chosen_stats = tk.Button(app, text="Analyze Chosen Stats", command=lambda: data_fetch_functions.fetch_chosen_stats(pfr_link_list.url_aliases.get(selected_alias_var.get()), stat_vector))
 fetch_chosen_stats.pack()
-
-fetch_spreads = tk.Button(app, text="Fetch Spreads", command=lambda: data_fetch_functions.fetch_spread_and_result(spread_list_get(selected_alias_var.get())))
-fetch_spreads.pack()
 
 stat_box = tk.Listbox(app)
 stat_box.pack()

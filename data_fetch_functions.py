@@ -32,5 +32,3 @@ def fetch_chosen_stats(selected_url, stat_vector):
             data_analysis_functions.create_graph(vector_of_stat_vectors)
         else:
             print('Failed to retrive the web page.')
-            
-#def fetch_spread_and_result(selected_url):

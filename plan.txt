@@ -1,2 +1,0 @@
-3. add opponent name, team record, and home/away for x-axis
-4. make the spread and whether they cover a recorded stat
