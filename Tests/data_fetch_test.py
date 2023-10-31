@@ -5,6 +5,7 @@ import stat_enum
 import spread_list
 import data_analysis_functions
 from bs4 import BeautifulSoup
+import pytest
 import tkinter as tk
 from tkinter import ttk 
 from tkinter import *
