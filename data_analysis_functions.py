@@ -18,6 +18,7 @@ def create_graph(*args):
         input_numpy_arrays.append(np.array(vector))
     for item in input_numpy_arrays:
         for stat in item:
-            plt.plot(week,stat)
+            plt.plot(week,stat,label=stat)
+    plt.legend(loc="upper left")
     plt.tight_layout()
     plt.show()
